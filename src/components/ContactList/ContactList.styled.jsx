@@ -23,8 +23,8 @@ export const ListItem = styled.li`
   & span {
     font-weight: 400;
   }
-  &:nth-child(2n) {
-    background: #ecf1f3;
+  &:hover {
+    background-color: #daf5ff;
   }
 `;
 
@@ -32,6 +32,7 @@ export const Button = styled.button`
   border: none;
   padding: 0px;
   color: #1f3349;
+  background: none;
 
   & svg {
     height: 20px;
