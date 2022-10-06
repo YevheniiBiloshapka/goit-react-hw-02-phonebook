@@ -50,7 +50,6 @@ export class App extends Component {
             <Results>You don't have any contact 😓</Results>
           ) : (
             <>
-              <Results>Contact list:</Results>
               <ContactList
                 contacts={getVisibleTodos()}
                 onDeleteContact={deleteTodo}

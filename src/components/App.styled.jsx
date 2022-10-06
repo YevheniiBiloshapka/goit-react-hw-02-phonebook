@@ -30,7 +30,6 @@ export const Box = styled.div`
     color: #1f3349;
   }
 `;
-
 export const Results = styled.p`
   font-weight: 400;
   font-size: 12px;

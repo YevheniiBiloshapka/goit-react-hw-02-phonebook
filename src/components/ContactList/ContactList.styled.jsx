@@ -41,3 +41,17 @@ export const Button = styled.button`
     color: #2b97c2;
   }
 `;
+export const Results = styled.p`
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #1f3349;
+  margin-bottom: 10px;
+`;
+export const Error = styled.p`
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  color: #f15353;
+  margin-bottom: 10px;
+`;
