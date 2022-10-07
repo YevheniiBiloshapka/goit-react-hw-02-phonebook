@@ -3,8 +3,7 @@ import { Box, Section, Results } from './App.styled';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
-// import { nanoid } from 'nanoid'
-// model.id = nanoid() //=> "V1StGXR8_Z5jdHi6B-myT"
+import { nanoid } from 'nanoid';
 
 export class App extends Component {
   state = {
@@ -37,9 +36,20 @@ export class App extends Component {
     );
   };
 
+  addContacts = ({ name, number }) => {
+    const contact = {
+      id: nanoid(),
+      name,
+      number,
+    };
+    this.setState(prevState => ({
+      contacts: [contact, ...prevState.contacts],
+    }));
+  };
+
   render() {
     const { contacts, filter } = this.state;
-    const { deleteTodo, changeFilter, getVisibleTodos } = this;
+    const { deleteTodo, changeFilter, getVisibleTodos, addContacts } = this;
 
     return (
       <Section>
@@ -59,7 +69,7 @@ export class App extends Component {
         </Box>
         <Box>
           <h1>Phonebook</h1>
-          <ContactForm />
+          <ContactForm onSubmit={addContacts} />
         </Box>
       </Section>
     );

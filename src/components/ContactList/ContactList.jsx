@@ -1,5 +1,6 @@
 import { List, ListItem, Button, Results, Error } from './ContactList.styled';
 import { VscTrash } from 'react-icons/vsc';
+import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
   return Object.keys(contacts).length === 0 ? (
@@ -22,3 +23,10 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
     </>
   );
 };
+
+ContactList.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.number.isRequired,
+  number: PropTypes.number.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+}.isRequired;
