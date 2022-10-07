@@ -42,9 +42,20 @@ export class App extends Component {
       name,
       number,
     };
-    this.setState(prevState => ({
-      contacts: [contact, ...prevState.contacts],
-    }));
+
+    if (
+      this.state.contacts.some(
+        contact =>
+          contact.name.toLocaleLowerCase() === name.toLocaleLowerCase() ||
+          contact.number.toLocaleLowerCase() === number.toLocaleLowerCase()
+      )
+    ) {
+      alert(`${name} is already in contact`);
+    } else {
+      this.setState(prevState => ({
+        contacts: [contact, ...prevState.contacts],
+      }));
+    }
   };
 
   render() {
